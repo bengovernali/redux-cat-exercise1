@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+/*
+import NapButton from "./components/napButton";
+import EatButton from "./components/eatButton";
+import PlayButton from "./components/playButton";
+*/
+import { actionNap, actionEat, actionPlay } from "./redux/actions";
+
+class App extends Component {
+  /*
+  handleNap = () => {
+    actionNap();
+  };
+
+  handleEat = () => {
+    actionEat();
+  };
+
+  handlePlay = () => {
+    actionPlay();
+  };
+*/
+  render() {
+    return (
+      <div className="App">
+        <button onClick={() => actionNap}>Nap</button>
+        <button onClick={() => actionEat}>Eat</button>
+        <button onClick={() => actionPlay}>Play</button>
+      </div>
+    );
+  }
 }
 
 export default App;
